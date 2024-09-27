@@ -1,4 +1,4 @@
-
+#identificacion y tratamiento de datos faltantes
 
 # Cargar librerías necesarias
 library(tidyverse) # Para manipulación de datos y gráficos
