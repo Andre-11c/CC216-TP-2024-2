@@ -22,6 +22,7 @@ de software.
 ## 3. Dataset <a name="data3"></a>
 Origen de los datos: https://www.sciencedirect.com/science/article/pii/S2352340918315191
 <img src="Imagenes/Bellagio-Hotel-Casino-Las-Vegas.webp" alt="hotel" style="width: 700px;"/>
+<p></p>
 Figura 1: Hotel 
 
 El origen de los datos utilizados en el estudio proviene de los sistemas de gestión de propiedades (PMS) de dos hoteles en Portugal: un hotel resort en Algarve y un hotel urbano en Lisboa. Los datos fueron extraídos mediante consultas TSQL y procesados utilizando R. Las variables incluyen aspectos relacionados con las reservas, cancelaciones y características de los huéspedes, preservando la privacidad al eliminar identificadores sensibles. Estos conjuntos de datos están disponibles para su uso en investigación y educación en áreas como la gestión de ingresos y el aprendizaje automático.
@@ -43,6 +44,7 @@ Aún hablando un poco sobre el dataset, vamos a mirar un poco más de informaci�
 
 
 ## 4. Conclusiones <a name="data4"></a>
+El análisis de los datos revela que las reservas con mayor anticipación tienden a tener una mayor tasa de cancelación, sugiriendo la necesidad de ajustar las políticas de cancelación para este grupo. Los hoteles "Resort" presentan estadías más largas y menores tasas de cancelación en comparación con los hoteles urbanos, lo que indica diferencias en el comportamiento de los clientes según el tipo de hotel. Además, los clientes con solicitudes especiales tienen menos probabilidades de cancelar, lo que sugiere un mayor compromiso. Finalmente, se observó una estacionalidad en las reservas, con picos en meses turísticos, lo que resalta la importancia de ajustar las estrategias de marketing y precios según la temporada.
 ## 5.Licencia <a name="data5"></a>
 MIT License
 
