@@ -41,6 +41,173 @@ Casos de Uso Aplicables:
   * Planificación de recursos (personal, servicios) 
   * Entendimiento de preferencias de los clientes
 Aún hablando un poco sobre el dataset, vamos a mirar un poco más de información sobre el mismo:
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Tipo</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADR</td>
+      <td>Numérica</td>
+      <td>Tarifa diaria promedio, calculada dividiendo el total de transacciones de alojamiento por noches totales.</td>
+    </tr>
+    <tr>
+      <td>Adults</td>
+      <td>Entero</td>
+      <td>Número de adultos en la reserva.</td>
+    </tr>
+    <tr>
+      <td>Agent</td>
+      <td>Categórica</td>
+      <td>ID de la agencia de viajes que realizó la reserva.</td>
+    </tr>
+    <tr>
+      <td>ArrivalDateDayOfMonth</td>
+      <td>Entero</td>
+      <td>Día del mes de la fecha de llegada.</td>
+    </tr>
+    <tr>
+      <td>ArrivalDateMonth</td>
+      <td>Categórica</td>
+      <td>Mes de llegada, con 12 categorías de "Enero" a "Diciembre".</td>
+    </tr>
+    <tr>
+      <td>ArrivalDateWeekNumber</td>
+      <td>Entero</td>
+      <td>Número de la semana de la fecha de llegada.</td>
+    </tr>
+    <tr>
+      <td>ArrivalDateYear</td>
+      <td>Entero</td>
+      <td>Año de la fecha de llegada.</td>
+    </tr>
+    <tr>
+      <td>AssignedRoomType</td>
+      <td>Categórica</td>
+      <td>Código del tipo de habitación asignada, puede diferir del reservado por razones operativas o solicitud del cliente.</td>
+    </tr>
+    <tr>
+      <td>Babies</td>
+      <td>Entero</td>
+      <td>Número de bebés en la reserva.</td>
+    </tr>
+    <tr>
+      <td>BookingChanges</td>
+      <td>Entero</td>
+      <td>Número de cambios realizados en la reserva antes del check-in o cancelación.</td>
+    </tr>
+    <tr>
+      <td>Children</td>
+      <td>Entero</td>
+      <td>Número de niños, incluye tanto los de pago como los no de pago.</td>
+    </tr>
+    <tr>
+      <td>Company</td>
+      <td>Categórica</td>
+      <td>ID de la empresa o entidad responsable de la reserva o del pago.</td>
+    </tr>
+    <tr>
+      <td>Country</td>
+      <td>Categórica</td>
+      <td>País de origen, usando el formato ISO 3155-3:2013.</td>
+    </tr>
+    <tr>
+      <td>CustomerType</td>
+      <td>Categórica</td>
+      <td>Tipo de reserva, puede ser: Contrato, Grupo, Transitoria o Transitoria-partido.</td>
+    </tr>
+    <tr>
+      <td>DaysInWaitingList</td>
+      <td>Entero</td>
+      <td>Número de días que la reserva estuvo en lista de espera antes de ser confirmada.</td>
+    </tr>
+    <tr>
+      <td>DepositType</td>
+      <td>Categórica</td>
+      <td>Tipo de depósito realizado para garantizar la reserva, puede ser: No Depósito, No Reembolsable o Reembolsable.</td>
+    </tr>
+    <tr>
+      <td>DistributionChannel</td>
+      <td>Categórica</td>
+      <td>Canal de distribución de la reserva (Agentes de Viajes o Operadores Turísticos).</td>
+    </tr>
+    <tr>
+      <td>IsCanceled</td>
+      <td>Categórica</td>
+      <td>Indica si la reserva fue cancelada (1) o no (0).</td>
+    </tr>
+    <tr>
+      <td>IsRepeatedGuest</td>
+      <td>Categórica</td>
+      <td>Indica si el huésped es recurrente (1) o no (0).</td>
+    </tr>
+    <tr>
+      <td>LeadTime</td>
+      <td>Entero</td>
+      <td>Número de días entre la creación de la reserva y la fecha de llegada.</td>
+    </tr>
+    <tr>
+      <td>MarketSegment</td>
+      <td>Categórica</td>
+      <td>Segmento de mercado de la reserva (Agentes de Viajes o Operadores Turísticos).</td>
+    </tr>
+    <tr>
+      <td>Meal</td>
+      <td>Categórica</td>
+      <td>Tipo de paquete de comidas reservado (Ej: Sin comidas, Desayuno incluido, Media pensión, Pensión completa).</td>
+    </tr>
+    <tr>
+      <td>PreviousBookingsNotCanceled</td>
+      <td>Entero</td>
+      <td>Número de reservas previas no canceladas por el cliente.</td>
+    </tr>
+    <tr>
+      <td>PreviousCancellations</td>
+      <td>Entero</td>
+      <td>Número de reservas previas canceladas por el cliente.</td>
+    </tr>
+    <tr>
+      <td>RequiredCardParkingSpaces</td>
+      <td>Entero</td>
+      <td>Número de espacios de estacionamiento requeridos por el cliente.</td>
+    </tr>
+    <tr>
+      <td>ReservationStatus</td>
+      <td>Categórica</td>
+      <td>Estado final de la reserva, puede ser: Cancelada, Check-Out, o No Show.</td>
+    </tr>
+    <tr>
+      <td>ReservationStatusDate</td>
+      <td>Fecha</td>
+      <td>Fecha en la que se estableció el último estado de la reserva.</td>
+    </tr>
+    <tr>
+      <td>ReservedRoomType</td>
+      <td>Categórica</td>
+      <td>Código del tipo de habitación reservada.</td>
+    </tr>
+    <tr>
+      <td>StaysInWeekendNights</td>
+      <td>Entero</td>
+      <td>Número de noches de fin de semana que el huésped reservó o se hospedó.</td>
+    </tr>
+    <tr>
+      <td>StaysInWeekNights</td>
+      <td>Entero</td>
+      <td>Número de noches entre semana que el huésped reservó o se hospedó.</td>
+    </tr>
+    <tr>
+      <td>TotalOfSpecialRequests</td>
+      <td>Entero</td>
+      <td>Número de solicitudes especiales realizadas por el cliente (Ej: Cama gemela o piso alto).</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 ## 4. Conclusiones <a name="data4"></a>
