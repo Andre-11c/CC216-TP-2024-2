@@ -75,10 +75,9 @@ gg_miss_var(df)
 library(dplyr)
 library(ggplot2)
 
-#cargar datos
-setwd("C:/Users/zRnd/Documents/data tp")
+
 # Cargar los datos
-df <- read.csv("hotel_bookings.csv")
+df <- read.csv("C:/Users/Andre/Desktop/data/hotel_bookings.csv")
 
 # Crear una función para detectar y eliminar outliers usando el método IQR
 remove_outliers <- function(df, column) {
