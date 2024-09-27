@@ -1,3 +1,5 @@
+#################PRE-PROCESAMIENTO DE DATOS############################
+#######################################################################
 #identificacion y tratamiento de datos faltantes
 
 # Cargar librerías necesarias
@@ -99,3 +101,116 @@ boxplot(df_clean$adr, main = "Variable ADR sin outliers", col = "lightgreen")
 
 # Volver a la configuración de gráficos normal
 par(mfrow = c(1, 1))
+
+
+#################Visualización de datos################################
+#######################################################################
+
+#1. ¿Cuántas reservas se realizan por tipo de hotel? 
+#¿Qué tipo de hotel prefiere la gente?
+# Cargar librerías
+library(ggplot2)
+
+# Contar reservas por tipo de hotel
+reservas_hotel <- table(df$hotel)
+
+# Gráfico de barras
+ggplot(df, aes(x = hotel)) +
+  geom_bar(fill = "skyblue") +
+  labs(title = "Reservas por Tipo de Hotel", x = "Tipo de Hotel", y = "Cantidad de Reservas") +
+  theme_minimal()
+
+# Conclusión: Dependiendo de los datos, se verá si los huéspedes prefieren más hoteles "Resort" o "City".
+
+
+#2. ¿Está aumentando la demanda con el tiempo?
+# Contar reservas por año
+reservas_anio <- table(df$arrival_date_year)
+
+# Gráfico de línea
+ggplot(df, aes(x = as.factor(arrival_date_year))) +
+  geom_bar(fill = "lightgreen") +
+  labs(title = "Reservas por Año", x = "Año", y = "Cantidad de Reservas") +
+  theme_minimal()
+
+# Conclusión: El gráfico muestra si la demanda ha aumentado o disminuido a lo largo de los años.
+
+
+#3. ¿Cuáles son las temporadas de reservas (alta, media, baja)?
+# Contar reservas por mes
+reservas_mes <- table(df$arrival_date_month)
+
+# Gráfico de barras ordenado por mes
+ggplot(df, aes(x = factor(arrival_date_month, levels = month.name))) +
+  geom_bar(fill = "lightcoral") +
+  labs(title = "Reservas por Mes", x = "Mes", y = "Cantidad de Reservas") +
+  theme_minimal()
+
+# Conclusión: Se puede observar si hay una temporada alta (meses con mayor cantidad de reservas) y una temporada baja.
+
+#4. ¿Cuándo es menor la demanda de reservas?
+# Utilizamos el mismo gráfico anterior para observar los meses con menor demanda
+# Observa el gráfico de barras para identificar los meses con menor demanda.
+
+# Conclusión: Los meses con menor demanda son aquellos con las barras más bajas, indicando las temporadas bajas.
+
+#5. ¿Cuántas reservas incluyen niños y/o bebés?
+# Contar reservas que incluyen niños o bebés
+reservas_ninos_bebes <- nrow(df[df$children > 0 | df$babies > 0, ])
+
+# Mostrar el número
+print(paste("Reservas con niños o bebés:", reservas_ninos_bebes))
+
+# Gráfico de barras
+df$reserva_con_ninos <- ifelse(df$children > 0 | df$babies > 0, "Con niños/bebés", "Sin niños/bebés")
+ggplot(df, aes(x = reserva_con_ninos)) +
+  geom_bar(fill = "lightblue") +
+  labs(title = "Reservas que Incluyen Niños y/o Bebés", x = "Tipo de Reserva", y = "Cantidad de Reservas") +
+  theme_minimal()
+
+# Conclusión: Se puede observar qué porcentaje de las reservas incluyen niños o bebés.
+
+#6. ¿Es importante contar con espacios de estacionamiento?
+# Contar reservas que solicitan estacionamiento
+reservas_estacionamiento <- nrow(df[df$required_car_parking_spaces > 0, ])
+
+# Mostrar el número
+print(paste("Reservas con espacios de estacionamiento:", reservas_estacionamiento))
+
+# Gráfico de barras
+df$reserva_con_parking <- ifelse(df$required_car_parking_spaces > 0, "Con Parking", "Sin Parking")
+ggplot(df, aes(x = reserva_con_parking)) +
+  geom_bar(fill = "lightpink") +
+  labs(title = "Reservas que Incluyen Espacio de Estacionamiento", x = "Tipo de Reserva", y = "Cantidad de Reservas") +
+  theme_minimal()
+
+# Conclusión: Si una cantidad significativa de reservas incluye estacionamiento, su disponibilidad es importante.
+
+#7. ¿En qué meses del año se producen más cancelaciones de reservas?
+# Filtrar las reservas canceladas
+reservas_canceladas <- df[df$is_canceled == 1, ]
+
+# Gráfico de barras de cancelaciones por mes
+ggplot(reservas_canceladas, aes(x = factor(arrival_date_month, levels = month.name))) +
+  geom_bar(fill = "orange") +
+  labs(title = "Cancelaciones por Mes", x = "Mes", y = "Cantidad de Cancelaciones") +
+  theme_minimal()
+
+# Conclusión: Se puede observar en qué meses del año las cancelaciones son más frecuentes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
