@@ -22,6 +22,7 @@ de software.
 ## 3. Dataset <a name="data3"></a>
 Origen de los datos: https://www.sciencedirect.com/science/article/pii/S2352340918315191
 <img src="Imagenes/Bellagio-Hotel-Casino-Las-Vegas.webp" alt="hotel" style="width: 700px;"/>
+<p></p>
 Figura 1: Hotel 
 
 El origen de los datos utilizados en el estudio proviene de los sistemas de gestión de propiedades (PMS) de dos hoteles en Portugal: un hotel resort en Algarve y un hotel urbano en Lisboa. Los datos fueron extraídos mediante consultas TSQL y procesados utilizando R. Las variables incluyen aspectos relacionados con las reservas, cancelaciones y características de los huéspedes, preservando la privacidad al eliminar identificadores sensibles. Estos conjuntos de datos están disponibles para su uso en investigación y educación en áreas como la gestión de ingresos y el aprendizaje automático.
