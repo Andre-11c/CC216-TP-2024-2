@@ -6,7 +6,7 @@
 2. [Integrantes](#data2)
 
 3. [Dataset](#data3)
-    
+
 4. [Conclusiones](#data4)
         
 5. [Licencia](#data5)
@@ -20,6 +20,28 @@ de software.
 * Huaman Sirio Diego
 * Olivera Alvarez Lizbeth
 ## 3. Dataset <a name="data3"></a>
+Origen de los datos: https://www.sciencedirect.com/science/article/pii/S2352340918315191
+<img src="Imagenes/Bellagio-Hotel-Casino-Las-Vegas.webp" alt="hotel" style="width: 700px;"/>
+Figura 1: Hotel 
+
+El origen de los datos utilizados en el estudio proviene de los sistemas de gestión de propiedades (PMS) de dos hoteles en Portugal: un hotel resort en Algarve y un hotel urbano en Lisboa. Los datos fueron extraídos mediante consultas TSQL y procesados utilizando R. Las variables incluyen aspectos relacionados con las reservas, cancelaciones y características de los huéspedes, preservando la privacidad al eliminar identificadores sensibles. Estos conjuntos de datos están disponibles para su uso en investigación y educación en áreas como la gestión de ingresos y el aprendizaje automático.
+
+Casos de Uso Aplicables:
+* Interesados en este análisis:
+  * Gerentes de hoteles
+  * Departamentos de marketing de hoteles
+  * Agencias de viajes
+  * Plataformas de reserva en línea
+  * Investigadores en turismo y hospitalidad
+* Problemas o necesidades que responde este análisis:
+  * Optimización de la ocupación hotelera
+  * Predicción de demanda estacional
+  * Mejora de estrategias de marketing
+  * Planificación de recursos (personal, servicios) 
+  * Entendimiento de preferencias de los clientes
+Aún hablando un poco sobre el dataset, vamos a mirar un poco más de información sobre el mismo:
+
+
 ## 4. Conclusiones <a name="data4"></a>
 ## 5.Licencia <a name="data5"></a>
 MIT License
