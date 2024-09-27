@@ -44,6 +44,7 @@ Aún hablando un poco sobre el dataset, vamos a mirar un poco más de informaci�
 
 
 ## 4. Conclusiones <a name="data4"></a>
+El análisis de los datos revela que las reservas con mayor anticipación tienden a tener una mayor tasa de cancelación, sugiriendo la necesidad de ajustar las políticas de cancelación para este grupo. Los hoteles "Resort" presentan estadías más largas y menores tasas de cancelación en comparación con los hoteles urbanos, lo que indica diferencias en el comportamiento de los clientes según el tipo de hotel. Además, los clientes con solicitudes especiales tienen menos probabilidades de cancelar, lo que sugiere un mayor compromiso. Finalmente, se observó una estacionalidad en las reservas, con picos en meses turísticos, lo que resalta la importancia de ajustar las estrategias de marketing y precios según la temporada.
 ## 5.Licencia <a name="data5"></a>
 MIT License
 
