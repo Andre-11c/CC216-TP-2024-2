@@ -10,6 +10,64 @@ colSums(is.na(df))
 # Mostrar las filas y columnas que contienen NA
 which(is.na(df), arr.ind = TRUE)
 
+# Cargar librerías necesarias
+library(tidyverse) # Para manipulación de datos y gráficos
+library(naniar)    # Para visualización de valores faltantes
+
+# 1. Cargar el dataset
+df <- read.csv("C:/Users/Andre/Desktop/data/hotel_bookings.csv")
+
+# 2. Visualizar los primeros registros del dataset para familiarizarse con los datos
+head(df)
+
+# 3. Resumen de los datos para identificar columnas con valores faltantes
+summary(df)
+
+# 4. Identificación visual de valores faltantes
+# Se puede usar la librería 'naniar' para hacer un gráfico que muestre los valores faltantes.
+gg_miss_var(df)
+
+# 5. Contar cuántos valores faltantes tiene cada columna
+na_count <- sapply(df, function(y) sum(length(which(is.na(y)))))
+na_count <- data.frame(Columna = names(df), NA_Conteo = na_count)
+print(na_count)
+
+# 6. Eliminación de filas o columnas con valores faltantes
+# Si queremos eliminar todas las filas que tienen al menos un NA:
+df_sin_na_filas <- na.omit(df)
+
+# Si preferimos eliminar columnas que tienen muchos valores faltantes:
+# Aquí eliminamos columnas con más del 50% de valores faltantes.
+limite_faltantes <- 0.5 * nrow(df)  # Calculamos el límite
+df_sin_na_columnas <- df[, colSums(is.na(df)) < limite_faltantes]
+
+# 7. Imputación de valores faltantes
+# Otra opción es imputar los valores faltantes. Podemos hacer una imputación simple usando la media (para datos numéricos):
+df$columna_con_na <- ifelse(is.na(df$columna_con_na), 
+                            mean(df$columna_con_na, na.rm = TRUE), 
+                            df$columna_con_na)
+
+# También podemos imputar la mediana:
+df$columna_con_na <- ifelse(is.na(df$columna_con_na), 
+                            median(df$columna_con_na, na.rm = TRUE), 
+                            df$columna_con_na)
+
+# Para datos categóricos podemos imputar el valor más frecuente (moda):
+moda <- function(x) {
+  return(names(sort(table(x), decreasing = TRUE)[1]))
+}
+
+df$columna_categorica_con_na <- ifelse(is.na(df$columna_categorica_con_na), 
+                                       moda(df$columna_categorica_con_na), 
+                                       df$columna_categorica_con_na)
+
+# 8. Validación del tratamiento
+# Verificamos nuevamente si hay valores faltantes después del tratamiento
+sapply(df, function(y) sum(is.na(y)))
+
+# También podemos graficar nuevamente para asegurarnos que no quedan valores NA
+gg_miss_var(df)
+
 
 #identificacion y tratamiento de datos atipicos
 
